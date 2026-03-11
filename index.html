@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GitHub User Finder</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    body{
+      font-family: "Inter", sans-serif;
+      background:#0f172a;
+      color:white;
+    }
+
+    h1,h2,h3{
+      font-weight:600;
+      letter-spacing:-0.5px;
+    }
+
+    .repo-card{
+      transition: all 0.2s ease;
+    }
+
+    .repo-card:hover{
+      transform: translateY(-4px);
+    }
+
+    .avatar{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      border:3px solid #6366f1;
+      object-fit:cover;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<div class="container py-5">
+
+  <header class="text-center mb-5">
+
+    <h1 class="text-primary">
+      <i class="fab fa-github"></i> GitHub User Finder
+    </h1>
+
+    <p class="text-secondary">
+      Search for any GitHub user to see their profile and repositories
+    </p>
+
+  </header>
+
+
+  <!-- Search -->
+
+  <div class="input-group mb-4">
+
+    <input
+      type="text"
+      id="search"
+      class="form-control bg-dark text-light border-secondary"
+      placeholder="Enter GitHub username..."
+    >
+
+    <button id="search-btn" class="btn btn-primary">
+      Search
+    </button>
+
+  </div>
+
+
+  <!-- Profile -->
+
+  <div id="profile-container" class="card bg-dark border-secondary p-4 d-none">
+
+    <div class="d-flex gap-4 align-items-start mb-4">
+
+      <img id="avatar" class="avatar">
+
+      <div>
+
+        <h3 id="name"></h3>
+
+        <p id="username" class="text-primary mb-2"></p>
+
+        <p id="bio" class="text-secondary"></p>
+
+        <p class="text-secondary">
+          <i class="fas fa-map-marker-alt"></i>
+          <span id="location"></span>
+        </p>
+
+        <p class="text-secondary">
+          <i class="fas fa-calendar"></i>
+          Joined <span id="joined-date"></span>
+        </p>
+
+        <a id="profile-link" target="_blank" class="btn btn-primary btn-sm">
+          View Profile
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- Stats -->
+
+<div class="row text-center mb-4">
+
+  <div class="col-md-4">
+    <div class="p-3 bg-secondary bg-opacity-25 rounded">
+      <h3 id="followers" class="fw-bold text-white"></h3>
+      <p class="text-secondary mb-0">Followers</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="p-3 bg-secondary bg-opacity-25 rounded">
+      <h3 id="following" class="fw-bold text-white"></h3>
+      <p class="text-secondary mb-0">Following</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="p-3 bg-secondary bg-opacity-25 rounded">
+      <h3 id="repos" class="fw-bold text-white"></h3>
+      <p class="text-secondary mb-0">Repositories</p>
+    </div>
+  </div>
+
+</div>
+
+    <!-- Extra Info -->
+
+    <div class="row text-secondary mb-4">
+
+      <div class="col-md-4" id="company-container">
+        <i class="fas fa-building"></i>
+        <span id="company"></span>
+      </div>
+
+      <div class="col-md-4" id="blog-container">
+        <i class="fas fa-link"></i>
+        <a id="blog" target="_blank"></a>
+      </div>
+
+      <div class="col-md-4" id="twitter-container">
+        <i class="fab fa-twitter"></i>
+        <a id="twitter" target="_blank"></a>
+      </div>
+
+    </div>
+
+
+    <!-- Repositories -->
+
+    <h4 class="mb-3">Latest Repositories</h4>
+
+    <div id="repos-container" class="row g-3"></div>
+
+  </div>
+
+
+  <!-- Error -->
+
+  <div id="error-container" class="alert alert-danger text-center d-none">
+    No user found. Please try another username.
+  </div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
