@@ -19,7 +19,7 @@ const generateInitialCards = (values) => {
   }));
 };
 
-export const useGameLogic = (cardValues) => {
+const useGameLogic = (cardValues) => {
   const [cards, setCards] = useState(() => generateInitialCards(cardValues));
   const [flippedCards, setFlippedCards] = useState([]); // Warning should disappear now
   const [matchedCards, setMatchedCards] = useState([]);
@@ -100,3 +100,4 @@ export const useGameLogic = (cardValues) => {
     isGameComplete,
   };
 };
+export default useGameLogic;

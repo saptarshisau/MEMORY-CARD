@@ -1,7 +1,7 @@
 import { Card } from "./components/Card";
 import { GameHeader } from "./components/GameHeader";
 import { WinMessage } from "./components/WinMessage";
-import { useGameLogic } from "./hooks/UseGameLogic";
+import useGameLogic from "./hooks/useGameLogic";
 
 const cardValues = [
   "🍎","🍌","🍇","🍊",
