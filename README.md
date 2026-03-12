@@ -241,14 +241,6 @@ Possible enhancements for the game:
 
 **Saptarshi Sau**
 
-GitHub
-https://github.com/stellarZyon
-
-LeetCode
-https://leetcode.com/u/stellarZyon
-
-Codeforces
-https://codeforces.com/profile/stellarZyon
 
 ---
 
